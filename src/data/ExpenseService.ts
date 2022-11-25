@@ -1,7 +1,7 @@
 import { Expense } from "./models";
 import { DataService } from "./Service";
 
-type ExpenseData = {
+export type ExpenseData = {
   date: Date;
   name: string;
   category: string;
