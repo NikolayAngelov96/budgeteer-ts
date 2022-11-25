@@ -1,12 +1,11 @@
 type Content = string | Node;
 
 type elementFactory<T extends HTMLElement> = (
-  type: string,
-  props: object,
+  props?: object,
   ...content: Content[]
 ) => T;
 
-export function e(type: string, props: object, ...content: Content[]) {
+export function e(type: string, props?: object, ...content: Content[]) {
   const element = document.createElement(type);
 
   if (props) {
@@ -43,7 +42,7 @@ export const tfoot: elementFactory<HTMLTableSectionElement> = e.bind(
 
 export const tr: elementFactory<HTMLTableRowElement> = e.bind(null, "tr");
 export const th: elementFactory<HTMLTableCellElement> = e.bind(null, "th");
-export const tdata: elementFactory<HTMLTableCellElement> = e.bind(null, "td");
+export const td: elementFactory<HTMLTableCellElement> = e.bind(null, "td");
 export const button: elementFactory<HTMLButtonElement> = e.bind(null, "button");
 export const span: elementFactory<HTMLSpanElement> = e.bind(null, "span");
 export const div: elementFactory<HTMLDivElement> = e.bind(null, "div");
