@@ -7,3 +7,12 @@ export class Expense {
     public amount: number
   ) {}
 }
+
+export class Budget {
+  constructor(
+    public id: string,
+    public month: string,
+    public income: number,
+    public budget: number
+  ) {}
+}
